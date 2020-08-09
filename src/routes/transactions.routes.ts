@@ -23,10 +23,6 @@ transactionsRouter.get('/', async (request, response) => {
 
   const transactions = await transactionsRepository.find();
 
-  // const transactions = await transactionsRepository.find({
-  //   relations: ['category'],
-  // });
-
   transactions.map(function (transaction) {
     delete transaction.category_id;
     return transaction;

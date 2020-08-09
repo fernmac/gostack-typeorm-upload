@@ -4,6 +4,8 @@ import 'dotenv/config';
 
 import express, { Request, Response, NextFunction } from 'express';
 
+import cors from 'cors';
+
 import 'express-async-errors';
 
 import routes from './routes';
@@ -14,7 +16,7 @@ import createConnection from './database';
 
 createConnection();
 
-const app = express().use(express.json()).use(routes);
+const app = express().use(express.json()).use(cors()).use(routes);
 
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => { 
   if (err instanceof AppError) {

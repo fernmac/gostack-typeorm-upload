@@ -11,6 +11,8 @@
     "test": "cross-env NODE_ENV=test jest"
   },
   "dependencies": {
+    "@types/cors": "^2.8.6",
+    "cors": "^2.8.5",
     "csv-parse": "^4.8.8",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
